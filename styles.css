@@ -1,0 +1,160 @@
+/* number of spikes */
+@property --a {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: true;
+}
+@property --i {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: true;
+}
+@property --p {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: true;
+}
+img {
+  --r: 180px; /* control the size of the image */
+  --p: 0.2; /* control the size of the spikes (a uniteless value). It's a percentage of --r */
+  --f: 1.2; /* the scale factor */
+  --c: #E4844A; /* the main color */
+  --bg: #E0E4CC; /* the color behind the element (the body background here). I didn't find a fully transparent solution */
+  --angle: atan(sin(180deg / 16) / (var(--p) - 1 + cos(180deg / 16)));
+  height: calc(2 * var(--r));
+  padding-top: calc(2 * var(--r));
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  object-fit: cover;
+  object-position: top;
+  -webkit-mask: linear-gradient(#000 0 0) top/100% 50% no-repeat, linear-gradient(#000 0 0), conic-gradient(from calc(90deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(0deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(0deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(112.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(22.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(22.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(135deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(45deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(45deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(157.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(67.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(67.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(180deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(90deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(90deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(202.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(112.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(112.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(225deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(135deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(135deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(247.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(157.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(157.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(270deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(180deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(180deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(292.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(202.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(202.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(315deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(225deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(225deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(337.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(247.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(247.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(360deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(270deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(270deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(382.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(292.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(292.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(405deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(315deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(315deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(427.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(337.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(337.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0);
+  -webkit-mask-composite: source-over, xor, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over;
+  mask: linear-gradient(#000 0 0) top/100% 50% no-repeat, linear-gradient(#000 0 0) exclude, conic-gradient(from calc(90deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(0deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(0deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(112.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(22.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(22.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(135deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(45deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(45deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(157.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(67.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(67.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(180deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(90deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(90deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(202.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(112.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(112.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(225deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(135deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(135deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(247.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(157.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(157.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(270deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(180deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(180deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(292.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(202.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(202.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(315deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(225deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(225deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(337.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(247.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(247.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(360deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(270deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(270deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(382.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(292.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(292.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(405deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(315deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(315deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(427.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(337.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(337.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0);
+  background: conic-gradient(from calc(90deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(0deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(0deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(112.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(22.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(22.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(135deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(45deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(45deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(157.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(67.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(67.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(180deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(90deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(90deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(202.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(112.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(112.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(225deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(135deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(135deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(247.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(157.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(157.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(270deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(180deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(180deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(292.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(202.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(202.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(315deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(225deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(225deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(337.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(247.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(247.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(360deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(270deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(270deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(382.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(292.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(292.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(405deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(315deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(315deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), conic-gradient(from calc(427.5deg - var(--angle) + var(--a, 0deg)) at calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * cos(337.5deg + var(--a, 0deg))) calc(50% + (50% * (1 - var(--p)) - var(--i, 0px)) * sin(337.5deg + var(--a, 0deg))), var(--bg) calc(2 * var(--angle)), rgba(0, 0, 0, 0) 0), var(--c);
+  --_a: rotate linear infinite;
+  animation: var(--_a) 10s, var(--_a) 16s reverse;
+  animation-composition: add;
+  cursor: pointer;
+  clip-path: circle(50%); /* better than border radius*/
+  transition: --i 0.4s, --p 0.4s, padding 0.7s;
+}
+
+img:hover {
+  --i: calc(var(--r) * (1 - var(--p)) * (var(--f) - 1) / var(--f));
+  --p: 0.3; /* we update the size of spike a little */
+  padding: 0;
+  animation-play-state: running, paused;
+}
+
+@keyframes rotate {
+  to {
+    --a: 360deg;
+  }
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  grid-auto-flow: column;
+  background: #E0E4CC;
+}
+
+/*# sourceMappingURL=output.css.map */
+
+
+
+.container {
+  text-align: center;
+  position: relative;
+}
+
+
+#counter {
+  position: absolute;
+  bottom: -20px; /* تعديل هذه القيمة للتحكم في موضع النقاط تحت الصورة */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  width: 40px; /* تعديل حجم العنصر بناءً على حجم النقاط */
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.warning-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  z-index: 1000; /* يجب أن يكون رقم z-index أعلى من أي عناصر أخرى ليظهر فوقها */
+}
+
+/* مربع النصي للتحذير */
+.modal {
+  display: none; /* لا يتم عرضه افتراضيًا */
+  position: fixed; 
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden; /* يمنع التمرير */
+  background-color: rgba(0,0,0,0.8); 
+}
+
+/* محتوى مربع النصي */
+.modal-content {
+  background-color: #333;
+  margin: 15% auto;
+  padding: 40px;
+  border: 2px solid red; /* حدود حمراء */
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.2em;
+  box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.8); /* ظل حمراء */
+  animation: pulse 1s infinite; /* تأثير نبض */
+}
+
+/* زر إغلاق */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>anonymous_algeria</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- تضمين مكتبة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    h1 {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      color: rgb(19, 17, 17);
+      text-shadow: 2px 2px 4px rgba(110, 73, 105, 0.5);
+    }
+
+    .congratulations {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .congratulations video {
+      width: 300px;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .avatar:hover {
+      transform: scale(1.1);
+    }
+
+    .counter {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+
+    .social-links {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 2em; /* حجم الأيقونة */
+      transition: transform 0.3s;
+    }
+
+    .social-links a:hover {
+      transform: rotateY(360deg);
+    }
+
+    /* نمط القسم الجديد لتحميل الصورة */
+    .upload-section {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .upload-section input[type="file"] {
+      display: none;
+    }
+
+    .upload-section label {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #af904c;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .upload-section button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #9b4039c7;
+      color: white;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>@anonymous_algeria</h1>
+  
+  <div class="container">
+    <img id="avatar" src="images/logo.png" alt="هنا يمكن ان يغير صورة المستخدم بعد شراء ب 500 نقطة" class="avatar">
+    <p id="counter" class="counter">0</p>
+  </div>
+
+  <div id="warningModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>تحذير ⚠️! يرجى عدم استخدام الأدوات التلقائية للنقر أو التكبيس، وإذا تم اكتشاف استخدامها، فلن يتم تسليم الجائزة.</p>
+      <br>
+      <p>Warning ⚠️! Please refrain from using automatic clicking or tapping tools. If detected, the prize will not be awarded.</p>
+    </div>
+  </div>
+  
+  <!-- روابط الشبكات الاجتماعية -->
+  <div class="social-links">
+    <a href="https://instagram.com/anonymous_algeria01" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://t.me/anonymous_algeria" target="_blank">
+      <i class="fab fa-telegram-plane"></i>
+    </a>
+  </div>
+
+
+  <!-- أصوات النقر -->
+  <audio id="clickSound1" src="images/1.mp3"></audio>
+  <audio id="clickSound2" src="images/2.mp3"></audio>
+  <audio id="clickSound3" src="images/3.mp3"></audio>
+  <audio id="clickSound4" src="images/4.mp3"></audio>
+  <audio id="clickSound5" src="images/5.mp3"></audio>
+  <audio id="clickSound6" src="images/6.mp3"></audio>
+  <audio id="clickSound7" src="images/7.mp3"></audio>
+  <audio id="clickSound8" src="images/8.mp3"></audio>
+  <audio id="clickSound9" src="images/9.mp3"></audio>
+
+  <!-- رسالة التهنئة -->
+  <div class="congratulations" id="congratulationsMessage">
+    <h2>مبروك!</h2>
+    <p>لقد وصلت إلى 100 تكبيسة!</p>
+    <video src="videos/gg.mp4" autoplay loop muted></video>
+  </div>
+
+  <script>
+    // احصل على المربع النصي وزر الإغلاق
+var modal = document.getElementById("warningModal");
+var span = document.getElementsByClassName("close")[0];
+
+// عندما ينقر المستخدم على زر الإغلاق (x)، أخف المربع النصي
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// عرض المربع النصي عندما يتم تحميل الصفحة
+window.onload = function() {
+  modal.style.display = "block";
+}
+
+// أيضًا، يمكنك إضافة خيارات أخرى لإغلاق المربع النصي، مثل النقر خارج المربع النصي لإغلاقه
+
+  </script>
+  
+  <script src="script.js"></script>
+</body>
+</html>
