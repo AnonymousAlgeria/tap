@@ -10,8 +10,8 @@ document.getElementById('express-form').addEventListener('submit', function(even
     const username = document.getElementById('username').value;
     const userMessage = document.getElementById('feelings').value;
 
-    // صياغة الرسالة بالشكل المطلوب
-    const messageWithUsername = `'${username}'\n\nيقول 💬: ${userMessage}`;
+    // صياغة الرسالة بالشكل المطلوب مع رابط البوت
+    const messageWithUsername = `'${username}'\n\nيقول 💬: ${userMessage}\n\nيمكنك إرسال الرسائل من هنا: [رابط البوت](https://t.me/Information_anonymous_bot/ANONYX)`;
 
     // إرسال الرسالة إلى جميع المجموعات
     groupUsernames.forEach(function(groupUsername) {
