@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصور والأصوات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>وحدي في الظلام</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="gallery.html">الصور والأصوات</a></li>
+                <li><a href="support.html">الدعم</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="gallery">
+        <h2>الصور والأصوات</h2>
+        <div class="gallery-items">
+            <div class="image">
+                <img src="sad.jpg" alt="صورة حزينة">
+                <p>  لماذا الحياة قاصية هكذا </p>
+            </div>
+            <div class="audio">
+                <audio controls>
+                    <source src="sad.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم تشغيل الصوت.
+                </audio>
+                <p>'صوت يبعر عن الوحدة   '</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="upload">
+        <h2>إرسال صورة</h2>
+        <form id="upload-form" enctype="multipart/form-data">
+            <div class="upload-input">
+                <input type="file" name="file" accept="image/*,audio/*" required>
+                <button type="submit">إرسال</button>
+            </div>
+            <p id="upload-message"></p>
+        </form>
+    </section>
+    <div class="background"></div> 
+
+
+    <footer>
+        <p>&copy; 2024 وحدي في الظلام</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

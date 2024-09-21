@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وحدي في الظلام</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>وحدي في الظلام</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="gallery.html">الصور والأصوات</a></li>
+                <li><a href="support.html">الدعم</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h2>أهلاً بك في الظلام</h2>
+        <p>في عالم مليء بالصخب والضوء، أحيانًا نحتاج إلى الهدوء... إلى الوحدة.</p>
+        <p>مرحبًا بك في مكان حيث لا يوجد أحد سوى أفكارك وظلامك الداخلي.</p>
+    </section>
+
+    <!-- نموذج التعبير عن المشاعر -->
+    <section class="express">
+        <h2>التعبير عن مشاعرك</h2>
+        <form id="express-form">
+            <label for="username">اسمك أو اسم المستخدم:</label>
+            <input type="text" id="username" placeholder="اكتب اسمك هنا..." required>
+            
+            <label for="feelings">ما الذي يجعلك تشعر بالوحدة؟</label>
+            <textarea id="feelings" rows="5" placeholder="اكتب هنا..." required></textarea>
+            
+            <button type="submit">إرسال</button>
+        </form>
+        <p id="response-message"></p> <!-- مكان لعرض رسالة التأكيد بعد الإرسال -->
+    </section>
+    
+
+    <section class="upload">
+        <h2>يمكنك إرسال صورة هنا</h2>
+        <form id="upload-form" enctype="multipart/form-data">
+            <div class="upload-input">
+                <input type="file" name="file" accept="image/*,audio/*" required>
+                <button type="submit">إرسال</button>
+            </div>
+            <p id="upload-message"></p>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 وحدي في الظلام</p>
+        <p>المطور: <a href="https://t.me/anonymous_algeria">تيليجرام</a> | <a href="https://instagram.com/anonymous_algeria01">إنستجرام</a></p>
+    </footer>
+    <div class="background"></div>
+</body>
+</html>
